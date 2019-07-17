@@ -1,0 +1,10 @@
+<h1>This is HomePage</h1>
+
+<a href="{% url 'newstudent' %}">Add Student</a>
+<ul>
+{% for student in object_list %}
+    <li>{{ student.RollNo }} {{ student.name }}  {{ student.test1 }}  {{ student.test2 }}  {{ student.semester }}
+         <a href="{% url 'updatestudent' student.pk %}">Update</a>
+         <a href="{% url 'deletestudent' student.pk %}">Delete</a></li>
+{% endfor %}
+</ul>
